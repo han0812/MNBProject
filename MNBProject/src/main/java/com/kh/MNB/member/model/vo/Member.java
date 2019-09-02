@@ -12,7 +12,7 @@ public class Member {
       private String email; // 회원 이메일
       private String phone; // 회원 연락처
       private String address; // 회원 주소
-      private int memberType; // 회원 타입
+      private int memberType; // 회원 타입(1이면 일반회원 2면 베이비시터회원)
       private String status; // 회원 상태
       private Date enroll_Date; // 회원 수정날짜
       private Date modify_Date; // 회원 가입날짜
