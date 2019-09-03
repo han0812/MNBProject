@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <style>
+	
+	 @import url("resources/css/font.css");
+
 	body {margin:0;padding:0;  text-decoration:none; font-family:"NanumSquare","NanumMyeongjo","malgun","나눔고딕", "NanumGothic", "돋움", "Dotum", "굴림", "Gulim", "Sans-serif","Roboto"; font-size:13px; letter-spacing:-1px; background:#fff;line-height:160%}
 	html{ }
 	img{border:0; vertical-align:middle;}
@@ -16,11 +19,11 @@
 	    visibility: hidden;
 	    margin: 0px;
 	    padding: 0px;}
-	
+		
 	
 	/*#header {width:100%;background:url('../images/main/header_bak_img.png') no-repeat;min-height:908px;} */
 	.header_btn_wrap {background-color:#535353;}
-	.header_btn {width:1200px;margin:0 auto;padding:8px 0;}
+	.header_btn {width:1200px;margin:0 auto;padding:8px 0;}	
 	.header_btn ul {min-height:25px;float:right;}
 	.header_btn ul li {float:left; color:#fff; margin-right:25px;}
 	.header_btn ul li:last-child {float:left; color:#fff; margin-right:0px;}
@@ -43,7 +46,6 @@
 	<div class="header_btn_wrap">
 		<div class="header_btn">
 			<ul>
-				<li><A href="#">HOME</a></li>
 				<li><A href="#">LOGIN</a></li>
 				<li><A href="#">JOIN</a></li>
 				<li><A href="#">베이비시터등록</a></li>
@@ -54,11 +56,11 @@
 	
 	<div class="header_nav">
 		<div class="header_nav_wrap">
-			<img src="<%=request.getContextPath()%>/images/main/logo.png">
+			<img src="resources/images/main/logo.png">
 			<ul>
-				<li><A href="#">Mom And Babe</a></li>
-				<li><A href="#">베이비시터</a></li>
-				<li><A href="#">커뮤니티</a></li>
+				<li><A href="index.jsp">Mom And Babe</a></li>
+				<li><A href='bIntro.do'>베이비시터</a></li>
+				<li><A href="cIntro.do">커뮤니티</a></li>
 			</ul>
 		</div>
 	</div>

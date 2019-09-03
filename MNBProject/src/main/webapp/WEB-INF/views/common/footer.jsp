@@ -4,6 +4,8 @@
 <html>
 <style>
 	
+	@import url("resources/css/font.css");
+	
 	#bottom {width:100%;background-color:#292929;margin-top:212px;min-height:250px;}
 	.bottom_wrap {width:1200px;margin:0 auto;padding-top:30px;}
 	.bottom_logo img {padding-left:65px;}
@@ -17,7 +19,7 @@
 <body>
 <div id="bottom">
 	<div class="bottom_wrap">
-		<div class="bottom_logo"><img src="<%=request.getContextPath()%>/images/main/bottom_logo.png"></div>
+		<div class="bottom_logo"><img src="resources/images/main/bottom_logo.png"></div>
 		<div class="bottom_info">
 			대표 : 박신우 | 주소: 서울특별시 강남구 테헤란로14길 6 남도빌딩 | 사업자등록: 000-0000-00000<br>
 			팀원 : 신재민 이한솔 김민상 오경석 김영선<br>
