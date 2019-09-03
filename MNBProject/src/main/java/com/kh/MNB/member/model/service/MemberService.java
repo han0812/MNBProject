@@ -12,5 +12,7 @@ public interface MemberService {
 	int getListCount(); // 페이징처리를위해 전체갯수를 가져옴
 	
 	ArrayList<Member> selectmemberLevelList(PageInfo pi); //member list를 쭉 받아옴
+
+	Member selectUserDetail(String userId); // member Detail을 받아옴
 	
 }

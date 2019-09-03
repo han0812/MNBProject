@@ -26,6 +26,10 @@ public class MemberDAO {
 		RowBounds rowBounds = new RowBounds(offset, pi.getBoardLimit());
 		
 		
-		return (ArrayList)sqlSession.selectList("memberMapper.selectList", null, rowBounds);
+		return (ArrayList)sqlSession.selectList("memberMapper.selectMList", null, rowBounds);
+	}
+
+	public Member selectUserDetail(String userId) {
+		return sqlSession.selectOne("memberMapper.selectMDetail", userId);
 	}
 }

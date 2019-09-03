@@ -28,5 +28,10 @@ public class MemberServiceImpl implements MemberService {
 		return mDAO.selectmemberLevelList(pi);
 	}
 	
+	@Override
+	public Member selectUserDetail(String userId) {
+		return mDAO.selectUserDetail(userId);
+	}
+	
 	
 }

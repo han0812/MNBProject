@@ -2,6 +2,8 @@ package com.kh.MNB.member.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +27,6 @@ public class MemberController {
 	//------------------------- 관리자 부분 ---------------------------
 	@RequestMapping("manaHome.do")
 	public String test() {
-		System.out.println("들어왔다.");
 		return "manager/managermainView";
 	}
 	
@@ -38,15 +39,10 @@ public class MemberController {
 		
 		int listCount = mService.getListCount(); // 전체 페이지 수
 		
-		System.out.println("멤버 수 : " + listCount);
-		
 		PageInfo pi = Pagination.getPageInfo(currentPage, listCount); // 페이지에대한 정보
-		System.out.println("pi는 몇이니? : " + pi);
 		
 		ArrayList<Member> list = mService.selectmemberLevelList(pi);
 		
-		System.out.println("list 잘왔니 ?  : " + list);
-		System.out.println(list.get(0).getMemberType());
 		if(list != null) {
 			mv.addObject("list", list);
 			mv.addObject("pi", pi);
@@ -56,6 +52,20 @@ public class MemberController {
 			throw new MemberException("게시글 전체 조회에 실패하였습니다.");
 		}
 		
+		return mv;
+	}
+	
+	@RequestMapping("mUserDetail.do")
+	public ModelAndView mUserDetail(HttpServletRequest request, ModelAndView mv) {
+		String userId = request.getParameter("userId");
+		Member m = mService.selectUserDetail(userId);
+		if(userId != null) {
+			mv.addObject("m", m);
+			mv.setViewName("manager/managerMemberManaDetailView");
+		}
+		else {
+			throw new MemberException("회원정보 조회에 실패하였습니다.");
+		}
 		return mv;
 	}
 }

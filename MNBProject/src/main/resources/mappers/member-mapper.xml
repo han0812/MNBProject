@@ -8,11 +8,15 @@
 		where status = 'Y'
 	</select>
 	
-	<select id="selectList" resultType="Member">
+	<select id="selectMList" resultType="Member">
 		select *
 		from member
-		order by modify_Date desc
+		order by ENROLL_DATE desc
 	</select>
 
-  
+  	<select id="selectMDetail" parameterType="string" resultType="Member">
+  		select *
+  		from member
+  		where userId = #{ userId }
+  	</select>
 </mapper>
